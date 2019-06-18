@@ -1,0 +1,21 @@
+#!/bin/bash
+
+filter="qwerty"
+
+for var in "$@"
+do
+    filter="$filter|$var"
+done
+
+filter=$(echo "$filter" | sed 's/qwerty|//')
+#echo "$filter"
+
+java -jar /home/shaman/IdeaProjects/FileTop/target/FileTop-1.0-SNAPSHOT.jar /home/shaman/Documents/GDrive $@ \
+  | grep -v -Ee"^1 " \
+  | grep --color -i -Ee"($filter)"
+
+java -jar /home/shaman/IdeaProjects/FileTop/target/FileTop-1.0-SNAPSHOT.jar /home/shaman/MyDownloads/q/Books $@ \
+  | grep -v -Ee"^1 " \
+  | grep --color -i -Ee"($filter)"
+
+#  | head -n 35 \

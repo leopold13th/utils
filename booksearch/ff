@@ -1,0 +1,4 @@
+#!/bin/bash
+
+java -jar /home/shaman/IdeaProjects/FileTop/target/FileTop-1.0-SNAPSHOT.jar /home/shaman/Documents/GDrive $@
+java -jar /home/shaman/IdeaProjects/FileTop/target/FileTop-1.0-SNAPSHOT.jar /home/shaman/MyDownloads/q/Books $@
